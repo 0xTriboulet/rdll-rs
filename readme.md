@@ -15,8 +15,9 @@ rdll-rs is a Rust template that can be compiled as both a dynamic-link library (
 
 ## Project Structure
 
-- `dll/src/main.rs` - Executable entry point
-- `exe/src/lib.rs` - Library implementation with DLL exports
+- `dll/src/lib.rs` - Library entry point
+- `dll/c_src/c_entry.c` - Entry point for C code via FFI
+- `exe/src/main.rs` - Executable implementation with DLL exports
 - `build-deps/pe_to_shellcode` - Post-build stomp reflective loader
 - Supporting Rust source files
 
