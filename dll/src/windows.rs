@@ -8,6 +8,11 @@ pub(crate) const PIPE_ACCESS_DUPLEX: u32 = 0x00000003;
 pub(crate) const PIPE_TYPE_BYTE: u32 = 0x00000000;
 pub(crate) const INVALID_HANDLE_VALUE: HANDLE = -1isize as HANDLE;
 pub(crate) const ERROR_PIPE_CONNECTED: u32 = 535;
+// Constants for DllMain call_reason
+pub(crate) const DLL_PROCESS_ATTACH: DWORD = 1;
+pub(crate) const DLL_PROCESS_DETACH: DWORD = 0;
+pub(crate) const DLL_THREAD_ATTACH: DWORD = 2;
+pub(crate) const DLL_THREAD_DETACH: DWORD = 3;
 
 #[allow(non_snake_case)]
 #[link(name = "kernel32")]
