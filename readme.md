@@ -69,7 +69,7 @@ This works by loading the `rdll-rs.cna` which registers two commands: `rdll-exec
 I encourage you to try it sometime. However, to support the integration of C code a [Foreign Function Interface (FFI)](https://doc.rust-lang.org/nomicon/ffi.html) entry point (`dll/c_src/c_entry.c`) has been added to the template to allow you to call into C code from Rust.
 ![img.png](img.png)
 
-If you want to add more `.c` files, be sure to add them to the `dll/c_src` directory because that's the intended convention, and defined in `dll/ffi.rs` if you want to call them from Rust. The build script `dll/build.rs` builds all `.c` files in the `c_src` directory into a single
+If you want to add more `.c` files, be sure to add them to the `dll/c_src` directory because that's the intended convention, and define desired FFI functions in `dll/ffi.rs` if you want to call them from Rust. The build script `dll/build.rs` builds all `.c` files in the `c_src` directory into a single
 static library (`c_code`) that is linked into the Rust DLL.
 
 ## Technical Details
