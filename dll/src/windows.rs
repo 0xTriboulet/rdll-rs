@@ -20,17 +20,6 @@ unsafe extern "system" {
     pub(crate) fn WinExec(lpCmdLine: LPVOID, uCmdShow: DWORD) -> DWORD;
     pub(crate) fn GetModuleHandleA(lpModuleName: LPVOID) -> HANDLE;
     pub(crate) fn GetProcAddress(hmodule: HANDLE, lpProcName: LPVOID) -> LPVOID;
-}
-
-#[allow(non_snake_case)]
-#[link(name = "user32")]
-unsafe extern "system" {
-    pub fn MessageBoxA(hWnd: HANDLE, lpText: LPVOID, lpCaption: LPVOID, uType: DWORD);
-}
-
-#[allow(non_snake_case)]
-#[link(name = "user32")]
-unsafe extern "system" {
     pub(crate) fn GetLastError() -> u32;
     pub(crate) fn CreateNamedPipeA(
         lpName: *const u8,                              // LPCSTR
@@ -59,6 +48,12 @@ unsafe extern "system" {
     ) -> BOOL;
 
     pub(crate) fn FlushFileBuffers(handle: HANDLE) -> BOOL;
+}
+
+#[allow(non_snake_case)]
+#[link(name = "user32")]
+unsafe extern "system" {
+    pub fn MessageBoxA(hWnd: HANDLE, lpText: LPVOID, lpCaption: LPVOID, uType: DWORD);
 }
 
 #[repr(C)]
