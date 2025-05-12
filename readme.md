@@ -6,10 +6,10 @@ A Rust DLL template project that integrates [pe2shc](https://github.com/hasherez
 
 rdll-rs is a Rust template that can be compiled as both a dynamic-link library (DLL), a regular executable, or a Reflective DLL. It provides an example of how to create Windows DLLs using Rust, including proper exports and Windows API integration.
 
-This project is broken down into "main" branches `main` and `main-legacy`.
+This project is broken down into "main" branches `master` and `master-legacy`.
 
-- `main` is intended for use with modern prepend loaders.
-- `main-legacy` retains the necessary symbols for compatibility with stomp-style reflective loaders.
+- `master` is intended for use with modern prepend loaders.
+- `master-legacy` retains the necessary symbols for compatibility with stomp-style reflective loaders.
 
 ## Features
 
