@@ -60,7 +60,7 @@ The project can be used in thee ways:
     - `cd ..\..`
     - `cargo run --bin xtask --release`
     - Use your Reflective DLL in `target/release/dll_rs.shc.dll`
-    - **NOTE: If the build process above is too complicated/broken for your taste, simply placing the [`pe2shc.exe`](https://github.com/hasherezade/pe_to_shellcode/releases/download/v1.2/pe2shc.exe) executable in the proper folder structure (`build-deps/pe_to_shellcode/pe2shc/Release/pe2shc.exe`) will work. Alternatively, building a release `target/release/dll_rs.dll` and manually using any prepend loader, like [Donut](https://github.com/TheWover/donut) to generate a `target/release/dll_rs.shc.dll` would also allow for integrated functionality with the `.cna`.**
+    - **NOTE: If the build process above is too complicated/broken for your taste, simply placing the [`pe2shc.exe`](https://github.com/hasherezade/pe_to_shellcode/releases/download/v1.2/pe2shc.exe) executable in the proper folder structure (`build-deps/pe_to_shellcode/pe2shc/Release/pe2shc.exe`) will work. Alternatively, building a release `target/release/dll_rs.dll` and manually using any prepend loader, like [Donut](https://github.com/TheWover/donut), to generate a `target/release/dll_rs.shc.dll` would also allow for integrated functionality with the `.cna`.**
 
 ## Getting Reflective DLL Output to Beacon Console
 This template includes a `write_output` function which allows for output via named pipes to the Beacon console (in a very hacky way).
