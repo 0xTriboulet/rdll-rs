@@ -85,8 +85,7 @@ static library (`c_code`) that is linked into the Rust DLL.
 - Provides internal FFI declarations for Windows types
 - Includes DLL entry point handling
 - Remember: For maximum compatability with this template, all functionality should be called from `dll_main` in `dll/src/lib.rs`
-- Exports `ReflectiveLoader` and handles calling the real reflective loader to support legacy loader checks
-- Supports the command-line ergonomics of both the `shinject` and `dllinject` commands of your [favorite C2 Framework](https://www.cobaltstrike.com/).
+- Supports the command-line ergonomics of the `shinject` in your [favorite C2 Framework](https://www.cobaltstrike.com/).
 
 ## Comments
 This template is significantly more useful than most existing Reflective DLL templates in C/C++ because it provides an organic platform from which third-party libraries can be readily used. This is thanks to Rust's [Cargo](https://github.com/rust-lang/cargo) which allows for easily sharable libraries. 

