@@ -151,6 +151,12 @@ pub unsafe extern "system" fn ReflectiveLoader() {
     let module_base = find_mz_pe_signature();
     if module_base.is_some() {
         let module_base = module_base.unwrap();
+        // You can pass in module_base into your reflective loader here via rcx or esp-4.
+        // Something like this probably works
+        //      std::arch::asm!("mov rcx, {0}, in(reg) module_base);
+        //      std::arch::asm!(".byte 0x90, 0x90, 0x90 /* Reflective loader bytes here */");
+        // By default, the template assumes the pe2shc construction where the module base
+        // also contains a jmp to the stub, so we just call into it below
         unsafe { std::arch::asm!("call {0}", in(reg) module_base) };
     }
 }
