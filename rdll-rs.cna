@@ -37,7 +37,7 @@ alias rdll-exec {
     # Close handle
     closef($handle);
 
-    $actual_pipe_name = $pipe_name_generic; # 28 bytes by initial design
+    $padded_pipe_name = $pipe_name_generic; # 28 bytes by initial design
     $desired_length = "28"; # per DLL design
     $padding_needed = $desired_length - strlen($actual_pipe_name);
     $padded_pipe_name = $actual_pipe_name;
@@ -51,7 +51,7 @@ alias rdll-exec {
         }
         $padded_pipe_name = $actual_pipe_name . $null_padding;
     } else if ($padding_needed < 0) {
-        berror($beacon_id, "Pipe name '" . $pipe_name_generic_actual . "' is longer than max " . $max_pipe_name_len . " bytes!");
+        berror($beacon_id, "Pipe name '" . $padded_pipe_name . "' is longer than max " . $max_pipe_name_len . " bytes!");
         return; # Important to return if name is too long
     }
     println("ORIGINAL PIPENAME: " . $pipe_stomp_me_name);
