@@ -43,7 +43,7 @@ cargo run --bin xtask --release
 
 ## Usage
 
-The project can be used in thee ways:
+The project can be used in three ways:
 
 1. As a DLL (**dll-rs.dll**):
     - Build in release mode to generate the DLL
