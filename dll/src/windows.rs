@@ -6,6 +6,7 @@ pub(crate) type LPVOID = *mut std::ffi::c_void;
 
 pub(crate) const PIPE_ACCESS_DUPLEX: u32 = 0x00000003;
 pub(crate) const PIPE_TYPE_BYTE: u32 = 0x00000000;
+pub(crate) const PIPE_WAIT: u32 = 0x00000000;
 pub(crate) const INVALID_HANDLE_VALUE: HANDLE = -1isize as HANDLE;
 pub(crate) const ERROR_PIPE_CONNECTED: u32 = 535;
 // Constants for DllMain call_reason

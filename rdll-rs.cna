@@ -3,8 +3,9 @@
 
 import beacon.CommandBuilder;
 
-global('$pipe_wait $pipe_name_generic $pipe_stomp_me_name');
-$pipe_name_generic = "macrohard_updates"; # Change the pipe name an reload the CNA for 'opsec', 28-bytes MAX
+global('$pipe_wait $pipe_name_generic $pipe_stomp_me_name  $pipe_name_generic_final');
+$pipe_name_generic = "macrohard_updates_2"; # Change the pipe name an reload the CNA for 'opsec', 28-bytes MAX
+$pipe_name_generic_final = $null;
 $pipe_wait = 30000; # Custom timeout
 $pipe_stomp_me_name = "RDLL_PIPE_NAME_NO_CHANGE_PLS";
 
@@ -39,8 +40,8 @@ alias rdll-exec {
 
     $padded_pipe_name = $pipe_name_generic; # 28 bytes by initial design
     $desired_length = "28"; # per DLL design
-    $padding_needed = $desired_length - strlen($actual_pipe_name);
-    $padded_pipe_name = $actual_pipe_name;
+    $padding_needed = $desired_length - strlen($pipe_name_generic);
+    $padded_pipe_name = $pipe_name_generic;
 
     if ($padding_needed > 0) {
         $null_padding = "";
@@ -49,11 +50,14 @@ alias rdll-exec {
             $null_padding = $null_padding . chr(0); # Append an actual null byte
             $i = $i + 1;
         }
-        $padded_pipe_name = $actual_pipe_name . $null_padding;
+        $padded_pipe_name = $pipe_name_generic . $null_padding;
     } else if ($padding_needed < 0) {
         berror($beacon_id, "Pipe name '" . $padded_pipe_name . "' is longer than max " . $max_pipe_name_len . " bytes!");
         return; # Important to return if name is too long
     }
+	
+	$pipe_name_generic_final = $pipe_name_generic;
+	
     println("ORIGINAL PIPENAME: " . $pipe_stomp_me_name);
     println("NEW PIPENAME: " . $padded_pipe_name);
 

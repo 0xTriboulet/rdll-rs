@@ -35,7 +35,7 @@ pub(crate) fn write_output(data: &str) {
         CreateNamedPipeA(
             pipe_name.as_ptr() as *const u8,
             PIPE_ACCESS_DUPLEX,
-            PIPE_TYPE_BYTE,
+            PIPE_TYPE_BYTE | PIPE_WAIT,
             1,
             4096,
             4096,
