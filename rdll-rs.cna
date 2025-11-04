@@ -4,7 +4,7 @@
 import beacon.CommandBuilder;
 
 global('$pipe_wait $pipe_name_generic $pipe_stomp_me_name  $pipe_name_generic_final');
-$pipe_name_generic = "macrohard_updates_2"; # Change the pipe name an reload the CNA for 'opsec', 28-bytes MAX
+$pipe_name_generic = "macrohard_updates"; # Change the pipe name an reload the CNA for 'opsec', 28-bytes MAX
 $pipe_name_generic_final = $null;
 $pipe_wait = 30000; # Custom timeout
 $pipe_stomp_me_name = "RDLL_PIPE_NAME_NO_CHANGE_PLS";
